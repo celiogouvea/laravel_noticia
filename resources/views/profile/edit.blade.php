@@ -75,17 +75,14 @@
                             <div class="block block-three"></div>
                             <div class="block block-four"></div>
                             <a href="#">
-                                <img class="avatar" src="{{ asset('white') }}/img/emilyz.jpg" alt="">
+                                <img class="avatar" src="{{ asset('white') }}/img/default-avatar.jpg" alt="">
                                 <h5 class="title">{{ auth()->user()->name }}</h5>
                             </a>
                             <p class="description">
-                                {{ _('Ceo/Co-Founder') }}
+                                {{ _('Publisher') }}
                             </p>
                         </div>
                     </p>
-                    <div class="card-description">
-                        {{ _('Do not be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...') }}
-                    </div>
                 </div>
                 <div class="card-footer">
                     <div class="button-container">

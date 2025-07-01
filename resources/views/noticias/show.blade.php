@@ -7,15 +7,15 @@
             <div class="col-lg-8 col-md-10">
                 <div class="card bg-secondary shadow border-0">
                     <div class="card-header bg-transparent pb-5">
-                        <div class="text-muted text-center mt-2 mb-3"><h1>Detalhes da Notícia</h1></div>
+                        <div class="text-muted text-center mt-2 mb-3"><h1>News Details</h1></div>
                     </div>
                     <div class="card-body px-lg-5 py-lg-5">
                         <h2 class="card-title">{{ $noticia->titulo }}</h2>
-                        <p class="card-text text-muted">Publicado por: {{ $noticia->user->name }} em {{ $noticia->created_at->format('d/m/Y H:i') }}</p>
+                        <p class="card-text text-muted">Published to: {{ $noticia->user->name }} in {{ $noticia->created_at->format('d/m/Y H:i') }}</p>
                         <hr>
                         <p class="card-text">{{ $noticia->conteudo }}</p>
                         <div class="text-center mt-5">
-                            <a href="{{ route('noticias.index') }}" class="btn btn-primary">Voltar para Minhas Notícias</a>
+                            <a href="{{ route('noticias.index') }}" class="btn btn-primary">Back to My News</a>
                         </div>
                     </div>
                 </div>
