@@ -16,8 +16,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\NoticiaController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\NoticiaController::class, 'index'])->name('home');
 
 Route::get('/home', 'App\Http\Controllers\NoticiaController@index')->name('home')->middleware('auth');
+
+Route::get('/noticias-publicas', [NoticiaController::class, 'indexAll'])->name('noticias.indexAll');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('icons', ['as' => 'pages.icons', 'uses' => 'App\Http\Controllers\PageController@icons']);
