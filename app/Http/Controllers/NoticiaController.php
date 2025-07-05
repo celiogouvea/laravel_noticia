@@ -38,6 +38,27 @@ class NoticiaController extends Controller
         return view('noticias.index', compact('noticias'))->with('pageSlug', 'noticias');
     }
 
+
+    /**
+     * Exibe uma listagem das notícias, com pesquisa.
+     */
+    public function indexAll(Request $request)
+    {
+        $query = Noticia::query();
+
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('titulo', 'like', "%$search%")
+                ->orWhere('conteudo', 'like', "%$search%");
+            });
+        }
+
+        $noticias = $query->orderBy('created_at', 'desc')->paginate(10);
+
+        return view('noticias.public', compact('noticias'));
+    }
+
     /**
      * Mostra o formulário para criar uma nova notícia.
      */
